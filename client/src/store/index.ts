@@ -1,10 +1,10 @@
 import { configureStore, Middleware } from '@reduxjs/toolkit';
-import usersReducer from './usersSlice';
-import streamingReducer from './streamingSlice';
-import queueReducer from './queueSlice';
-import { socket } from '../services/api';
+import usersReducer from '@/store/usersSlice';
+import streamingReducer from '@/store/streamingSlice';
+import queueReducer from '@/store/queueSlice';
+import { socket } from '@/services/api';
 import { SocketEvents, QueueResult } from 'shared';
-import { completeRequest } from './queueSlice';
+import { completeRequest } from '@/store/queueSlice';
 
 // Socket middleware to handle websocket events
 const socketMiddleware: Middleware = (store) => {

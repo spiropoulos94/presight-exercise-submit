@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Provider } from 'react-redux';
-import { store } from './store';
-import App from './App';
+import { store } from '@/store';
+import App from '@/App';
 import './index.css';
-import ErrorBoundary from './components/ErrorBoundary';
+import ErrorBoundary from '@/components/ErrorBoundary';
 
 // Create a client
 const queryClient = new QueryClient({

@@ -1,5 +1,5 @@
 import { twMerge } from 'tailwind-merge';
-import { SpinnerIcon } from './icons';
+import { SpinnerIcon } from '@/components/ui/icons';
 
 export interface CircularProgressProps {
   className?: string;

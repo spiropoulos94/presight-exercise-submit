@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { User, UserFilters, FiltersResponse } from 'shared';
-import { RootState } from './index';
-import { getUsersApi, getFiltersApi } from '../services/api';
+import { RootState } from '@/store';
+import { getUsersApi, getFiltersApi } from '@/services/api';
 
 export interface UsersState {
   users: User[];

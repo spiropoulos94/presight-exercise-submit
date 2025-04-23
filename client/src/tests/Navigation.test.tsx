@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import Navigation from '../components/Navigation';
+import Navigation from '@/components/Navigation';
 
 describe('Navigation Component', () => {
   it('renders correctly with proper links', () => {

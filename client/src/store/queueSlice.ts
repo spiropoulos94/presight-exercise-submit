@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { processRequestApi, cancelAllRequestsApi } from '../services/api';
+import { processRequestApi, cancelAllRequestsApi } from '@/services/api';
 import { QueueResult, RequestItem } from 'shared';
-import { RootState } from './index';
+import { RootState } from '@/store';
 
 export interface QueueState {
   requestItems: RequestItem[];

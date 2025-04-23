@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import FilterSidebar from './FilterSidebar';
+import FilterSidebar from '@/components/features/users/FilterSidebar';
 import { FiltersResponse } from 'shared';
 
 interface MobileFilterDrawerProps {

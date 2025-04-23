@@ -5,8 +5,8 @@ import {
   selectRequestItems,
   resetAllItems,
   cancelAndResetAll,
-} from '../store/queueSlice';
-import { AppDispatch } from '../store';
+} from '@/store/queueSlice';
+import { AppDispatch } from '@/store';
 
 /**
  * Custom hook that provides websocket queue functionality using Redux

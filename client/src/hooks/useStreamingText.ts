@@ -5,8 +5,8 @@ import {
   selectStreamingText,
   selectStreamingIsLoading,
   selectStreamingError,
-} from '../store/streamingSlice';
-import { AppDispatch } from '../store';
+} from '@/store/streamingSlice';
+import { AppDispatch } from '@/store';
 
 /**
  * Custom hook that provides streaming text functionality using Redux

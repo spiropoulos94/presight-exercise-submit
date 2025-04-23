@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { fetchStreamingText } from '../services/api';
-import { RootState } from './index';
+import { fetchStreamingText } from '@/services/api';
+import { RootState } from '@/store';
 
 export interface StreamingState {
   text: string;

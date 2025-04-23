@@ -13,8 +13,8 @@ import {
   setSearchQuery,
   resetFilters,
   setPage,
-} from '../store/usersSlice';
-import { AppDispatch } from '../store';
+} from '@/store/usersSlice';
+import { AppDispatch } from '@/store';
 
 export const useUsers = () => {
   const dispatch = useDispatch<AppDispatch>();
