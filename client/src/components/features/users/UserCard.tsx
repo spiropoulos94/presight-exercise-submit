@@ -1,6 +1,6 @@
 import { User } from 'shared';
 import { Card, CardContent } from '@/components/ui/Card';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 interface UserCardProps {
   user: User;

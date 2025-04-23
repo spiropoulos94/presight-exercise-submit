@@ -25,7 +25,7 @@ const Navigation = () => {
       <nav className="container mx-auto px-4">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0">
-            <span className="text-xl font-bold">Presight Exercise 2</span>
+            <span className="text-xl font-bold">Presight Exercise</span>
           </div>
 
           {/* Mobile menu button */}

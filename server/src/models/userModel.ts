@@ -3,7 +3,7 @@ import { generateUsers } from '../utils/dataGenerator';
 import config from '../config';
 
 // Generate in-memory database of users
-const USERS_DB: User[] = generateUsers(config.data.userCount);
+const USERS_DB: User[] = generateUsers(Number(config.data.userCount));
 
 /**
  * User model class that handles all user-related data operations

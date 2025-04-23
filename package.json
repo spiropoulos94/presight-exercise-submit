@@ -13,7 +13,10 @@
     "start": "lerna run start",
     "dev": "npm run build:shared && lerna run dev --parallel",
     "build:shared": "cd shared && npm run build",
-    "build": "lerna run build"
+    "build": "lerna run build",
+    "lint": "lerna run lint --parallel",
+    "lint:fix": "lerna run lint -- --fix",
+    "test": "lerna run test --parallel"
   },
   "devDependencies": {
     "lerna": "~8.2.1"

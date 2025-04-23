@@ -77,6 +77,6 @@ export class QueueModel {
 
       // Process next item
       this.processQueue();
-    }, config.queue.processingTime);
+    }, Number(config.queue.processingTime));
   }
 }
