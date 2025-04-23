@@ -5,9 +5,9 @@
   "author": "",
   "license": "MIT",
   "workspaces": [
-    "presight-client",
-    "presight-server",
-    "presight-shared"
+    "client",
+    "server",
+    "shared"
   ],
   "scripts": {
     "start": "lerna run start",
