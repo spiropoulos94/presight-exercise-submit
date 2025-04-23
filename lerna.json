@@ -1,4 +1,10 @@
 {
-  "npmClient": "yarn",
-  "version": "0.0.2"
+  "packages": ["client", "server", "shared"],
+  "version": "1.0.0",
+  "npmClient": "npm",
+  "command": {
+    "bootstrap": {
+      "hoist": true
+    }
+  }
 }
