@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react';
 import { useStreamingText } from '@/hooks/useStreamingText';
 import { PageHeader } from '@/components/features/users';
 import { Button } from '@/components/ui/Button';
+import { PlayCircleIcon, StopCircleIcon } from '@/components/ui/icons';
 
 const StreamingText = () => {
   const { text, isLoading, error, refreshText, cancelStreaming } = useStreamingText();
@@ -28,36 +29,14 @@ const StreamingText = () => {
           disabled={isLoading}
         >
           <span className="flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 mr-1"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                clipRule="evenodd"
-              />
-            </svg>
+            <PlayCircleIcon className="h-5 w-5 mr-1" fontSize="small" />
             Start Streaming
           </span>
         </Button>
 
         <Button variant="danger" onClick={cancelStreaming} disabled={!isLoading}>
           <span className="flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 mr-1"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 001 1h4a1 1 0 001-1V8a1 1 0 00-1-1H8z"
-                clipRule="evenodd"
-              />
-            </svg>
+            <StopCircleIcon className="h-5 w-5 mr-1" fontSize="small" />
             Stop Streaming
           </span>
         </Button>

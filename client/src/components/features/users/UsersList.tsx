@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { useVirtualizer } from '@tanstack/react-virtual';
-import UserCard from './UserCard';
+import UserCard from '@/components/features/users/UserCard';
+import EmptyState from '@/components/features/users/EmptyState';
 import { User } from 'shared';
 import { Box, CircularProgress, Typography } from '@/components/ui';
 
@@ -46,7 +47,6 @@ const UsersList: React.FC<UsersListProps> = ({ users, loading, hasMore, loadMore
         <Typography variant="body2" color="secondary">
           Showing {users.length} of {total} users
         </Typography>
-
         {loading && !users.length && <CircularProgress size={20} className="ml-2" />}
       </Box>
 
@@ -54,37 +54,41 @@ const UsersList: React.FC<UsersListProps> = ({ users, loading, hasMore, loadMore
         ref={parentRef}
         className="h-[calc(100vh-200px)] sm:h-[calc(100vh-250px)] overflow-auto rounded-lg bg-white p-2 sm:p-4"
       >
-        <div className="relative w-full" style={{ height: `${rowVirtualizer.getTotalSize()}px` }}>
-          {rowVirtualizer.getVirtualItems().map((virtualRow) => {
-            const isLoaderRow = virtualRow.index >= users.length;
+        {users.length === 0 && !hasMore ? (
+          <EmptyState loading={loading} />
+        ) : (
+          <div className="relative w-full" style={{ height: `${rowVirtualizer.getTotalSize()}px` }}>
+            {rowVirtualizer.getVirtualItems().map((virtualRow) => {
+              const isLoaderRow = virtualRow.index >= users.length;
 
-            return (
-              <div
-                key={virtualRow.index}
-                className="absolute top-0 left-0 w-full px-2 py-2"
-                style={{
-                  height: `${virtualRow.size}px`,
-                  transform: `translateY(${virtualRow.start}px)`,
-                }}
-              >
-                <div className="h-full">
-                  {isLoaderRow ? (
-                    <div className="flex justify-center items-center py-4">
-                      <CircularProgress size={24} />
-                      <Typography variant="body2" color="secondary" className="ml-2">
-                        Loading more...
-                      </Typography>
-                    </div>
-                  ) : (
-                    <div className="h-full pb-2">
-                      <UserCard user={users[virtualRow.index]} />
-                    </div>
-                  )}
+              return (
+                <div
+                  key={virtualRow.index}
+                  className="absolute top-0 left-0 w-full px-2 py-2"
+                  style={{
+                    height: `${virtualRow.size}px`,
+                    transform: `translateY(${virtualRow.start}px)`,
+                  }}
+                >
+                  <div className="h-full">
+                    {isLoaderRow ? (
+                      <div className="flex justify-center items-center py-4">
+                        <CircularProgress size={24} />
+                        <Typography variant="body2" color="secondary" className="ml-2">
+                          Loading more...
+                        </Typography>
+                      </div>
+                    ) : (
+                      <div className="h-full pb-2">
+                        <UserCard user={users[virtualRow.index]} />
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     </Box>
   );
